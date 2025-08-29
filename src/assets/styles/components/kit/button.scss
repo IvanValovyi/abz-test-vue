@@ -1,0 +1,27 @@
+@use "../../base/variables" as v;
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  line-height: 26px;
+  padding: 4px 18px;
+  border-radius: 80px;
+  min-width: 100px;
+
+  &--primary {
+    background: v.$primary;
+    color: v.$black;
+
+    &:hover {
+      background: v.$primary-hover;
+    }
+
+    &:disabled {
+      color: v.$white-disabled;
+      background: v.$primary-disabled;
+    }
+  }
+}

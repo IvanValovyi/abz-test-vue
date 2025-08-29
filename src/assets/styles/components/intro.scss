@@ -1,0 +1,49 @@
+@use "../base/variables.scss" as v;
+
+.intro {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-image: url("../../images/intro.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+  }
+
+  @media (min-width: 1024px) {
+    height: 650px;
+  }
+
+  &__content {
+    color: v.$white;
+    max-width: 380px;
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+
+    .intro__title {
+      margin-bottom: 21px;
+    }
+
+    .intro__description {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+}

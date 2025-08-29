@@ -1,0 +1,46 @@
+@use "./variables" as v;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  color: v.$black;
+}
+
+.title-text {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 60px;
+  }
+
+  &--no-padding {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 0;
+  }
+}
+
+.page-content {
+  background: v.$gray-bg;
+  display: flex;
+  flex-direction: column;
+}

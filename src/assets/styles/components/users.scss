@@ -1,0 +1,70 @@
+@use "../base/variables.scss" as v;
+
+.users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 29px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .user__item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      background: v.$white;
+      border-radius: 10px;
+
+      .user__avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        margin-bottom: 20px;
+      }
+
+      .user__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+
+        .user__name {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__load-more {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

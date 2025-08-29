@@ -1,0 +1,52 @@
+@use "../base/variables.scss" as v;
+
+.add-user {
+  padding-top: 70px;
+  padding-bottom: 140px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    &-content {
+      width: 100%;
+      max-width: 380px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 50px;
+
+      .input-field__help,
+      .input-field__error {
+        position: absolute;
+        bottom: -4px;
+        left: 15px;
+        transform: translateY(100%);
+        line-height: 14px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__error-message {
+    color: v.$red;
+    text-align: center;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../../base/variables" as v;
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 14px 15px;
+  border: 1px solid v.$gray-light;
+  outline: 1px solid transparent;
+  border-radius: 4px;
+  background: v.$gray-bg;
+  cursor: text;
+  transition: all 0.1s linear;
+
+  &__label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 13px;
+    padding: 0 3px;
+    transform: translateY(-50%);
+    background: v.$gray-bg;
+    color: v.$gray-dark;
+    transition: all 0.1s linear;
+    user-select: none;
+  }
+
+  &__input {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background: transparent;
+  }
+
+  &__error {
+    color: v.$red;
+    white-space: pre-line;
+  }
+
+  &__help {
+    color: v.$gray-dark;
+  }
+
+  &.focused {
+    .input-field__label {
+      top: 0%;
+      line-height: 14px;
+      font-size: 12px;
+    }
+  }
+
+  &.error {
+    border-color: v.$red;
+    outline: 1px solid v.$red;
+
+    .input-field__label {
+      color: v.$red;
+    }
+  }
+}

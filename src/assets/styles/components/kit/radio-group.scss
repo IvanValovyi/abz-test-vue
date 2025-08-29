@@ -1,0 +1,65 @@
+@use "../../base/variables" as v;
+
+.radio-group {
+  position: relative;
+
+  &.error {
+    .radio-group__label {
+      color: v.$red;
+    }
+
+    .radio-group__circle {
+      border-color: v.$red;
+    }
+  }
+
+  &__label {
+    margin-bottom: 11px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid v.$gray-light;
+    border-radius: 100%;
+    margin-right: 8px;
+    transition: border-color 0.1s linear;
+
+    .radio-group__dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      background: v.$secondary;
+      opacity: 0;
+      transition: opacity 0.1s linear;
+    }
+
+    &.checked {
+      border-color: v.$secondary;
+
+      .radio-group__dot {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__error {
+    color: v.$red;
+  }
+}

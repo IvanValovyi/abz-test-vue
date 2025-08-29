@@ -1,0 +1,27 @@
+@use "../base/variables.scss" as v;
+
+.header {
+  background: v.$white;
+  width: 100%;
+  padding: 13px 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      width: 104px;
+      height: 26px;
+    }
+
+    .button__group {
+      display: flex;
+      align-items: center;
+
+      .btn:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -16,7 +16,9 @@ const validateDimensions = (file) =>
 export const userSchema = yup.object({
     name: yup.string().required("Name is required").min(2).max(60),
     email: yup.string().required("Email is required").test('is-valid-email', 'Email is invalid', value => validator.isEmail(value)),
-    phone: yup.string().required("Phone is required"),
+    phone: yup.string()
+        .required("Phone is required")
+        .matches(/^\+38 \(0\d{2}\) \d{3}-\d{2}-\d{2}$/, "Phone must be in format +38 (0XX) XXX-XX-XX"),
     position_id: yup.number().required("Position is required"),
     photo: yup
         .mixed()
